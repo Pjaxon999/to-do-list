@@ -1,2 +1,4 @@
-import "./modern-normalize.css";
-import "./styles.css";
+import "./styles/modern-normalize.css";
+import "./styles/styles.css";
+
+console.log("testing...testing...oh whatever...")
