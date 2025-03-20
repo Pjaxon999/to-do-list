@@ -1,11 +1,13 @@
 import { isToday, isPast } from "date-fns";
 
 export class Task {
-    constructor(title, dueDate, notes, priority, isComplete = false) {
+    constructor(title, dueDate, notes, priority, projectId, id = crypto.randomUUID(), isComplete = false) {
         this.title = title;
         this.dueDate = dueDate;
         this.notes = notes;
         this.priority = priority;
+        this.projectId = projectId;
+        this.id = id;
         this.isComplete = isComplete;
     }
 

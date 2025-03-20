@@ -1,8 +1,10 @@
 import { Task } from "./task.js";
 
 export class Project {
-    constructor(name){
+    constructor(name, id = crypto.randomUUID(), isHome = false){
         this.name = name;
+        this.id = id;
+        this.isHome = isHome;
         this.tasks = [];
     }
 
@@ -12,6 +14,8 @@ export class Project {
             taskData.dueDate,
             taskData.notes,
             taskData.priority,
+            this.id,
+            taskData.id,
             taskData.isComplete
         );
         this.tasks.push(task);
