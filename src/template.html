@@ -8,58 +8,28 @@
 <body>
 
 <div class="wrapper">
+
 <header>
-    <div id="skiptocontent"><a href="#main-content">skip to main content</a></div>
-    <h1>To Do</h1>
+    <h1><img id="check-img" src="./assets/images/user-check.svg">Getting Things Done</h1>
 </header>
-<div class="left-side">
+
+<div class="sidebar">
     <nav>
-    <button>Home</button>
-    <button>Projects</button>
-    <button>Due Today</button>
-    <button>Overdue</button>
+    <button><img src="./assets/images/home.svg">Home</button>
+    <button><img src="./assets/images/inbox.svg">Projects</button>
+    <button><img src="./assets/images/calendar.svg">Today</button>
+    <button><img src="./assets/images/clock.svg">Overdue</button>
     </nav>
 </div>
+
 <main id="main-content">
-    <h2>Tasks</h2>
-    <div class="task">
-        
-    </div>
-    <button>Add Task</button>
-    <dialog id="task-dialog" open>
-        <p>Okay, let's add a new task!</p>
-        <form id="task-form" method="dialog">
-        <div class="form-section">
-            <label for="task">Title:</label>
-            <input type="text" name="title" id="title" autofocus required/>
-        </div>
-        <div class="form-section">
-            <label for="date">Due Date:</label>
-            <input type="date" id="date"/>
-        </div>
-        <div class="form-section">
-            <label for="notes">Notes:</label>
-            <input type="text" name="notes" id="notes"/>
-        </div>
-        <div class="form-section">
-            <label for="priority">Priority:</label>
-            <input type="radio" id="prioritychoice1" name="priority" value="low"/>
-            <label for="prioritychoice1">Low</label>
-            <input type="radio" id="prioritychoice2" name="priority" value="medium" checked/>
-            <label for="prioritychoice2">Medium</label>
-            <input type="radio" id="prioritychoice3" name="priority" value="high"/>
-            <label for="prioritychoice3">High</label>
-        </div>
-        <div class="form-section">
-            <button id="cancel-btn" value="cancel">Cancel</button>
-            <button type="submit" id="confirm-btn" value="default">Confirm</button>
-        </div>
-        </form>
-    </dialog>
+
 </main>
+
 <footer>
     <p>Made by Peter Jackson <a href="https://github.com/Pjaxon999/to-do-list"><img id="gitimg" src="./assets/images/github-svgrepo-com.svg"></a></p>
 </footer>
+
 </div>
 
 </body>
