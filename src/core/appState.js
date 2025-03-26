@@ -1,4 +1,4 @@
-import { Project } from "./project.js"
+import { Project } from "../utilities/project";
 
 export const appState = {
     // store projects and set the active project to home by default

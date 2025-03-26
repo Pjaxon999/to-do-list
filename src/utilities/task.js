@@ -3,7 +3,8 @@ import { isToday, isPast } from "date-fns";
 export class Task {
     constructor(title, dueDate, notes, priority, projectId, id = crypto.randomUUID(), isComplete = false) {
         this.title = title;
-        this.dueDate = dueDate;
+        const [year, month, day] = dueDate.split('-');
+        this.dueDate = new Date(year, month - 1, day);
         this.notes = notes;
         this.priority = priority;
         this.projectId = projectId;
@@ -20,11 +21,16 @@ export class Task {
     }
 
     updateDueDate(newDueDate) {
-        this.dueDate = newDueDate;
+        const [year, month, day] = newDueDate.split('-');
+        this.dueDate = new Date(year, month - 1, day);
     }
 
     updateTitle(newTitle) {
         this.title = newTitle;
+    }
+
+    updateNotes(newNotes) {
+        this.notes = newNotes;
     }
 
     get isOverdue() {

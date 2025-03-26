@@ -137,6 +137,10 @@ nav button {
   background-color: var(--color-high-priority);
 }
 
+.edit-btn {
+  background-color: var(--color-bg-alt);
+}
+
 /* Layout */
 .wrapper {
   display: grid;
@@ -201,15 +205,15 @@ nav {
   
 }
 
-li[data-priority = low] {
+li[data-priority = "low"] {
   border-left: 10px inset var(--color-low-priority);
 }
 
-li[data-priority = medium] {
+li[data-priority = "medium"] {
   border-left: 10px inset var(--color-medium-priority);
 }
 
-li[data-priority = high] {
+li[data-priority = "high"] {
   border-left: 10px inset var(--color-high-priority);
 }
 
