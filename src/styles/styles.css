@@ -45,6 +45,7 @@ h1 {
   font-weight: bolder;
   line-height: calc(1ex / 0.42);
   margin: 1rem;
+  margin-left: 2.3rem;
 }
 
 h2, h3, p, time {
@@ -115,7 +116,6 @@ button:active {
 nav button {
   width: 100%;
   display: flex;
-  justify-content: center;
   align-items: center;
 }
 

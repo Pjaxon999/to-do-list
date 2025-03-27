@@ -45,7 +45,7 @@ export function renderProjects(){
             <button class="delete-btn" data-action="delete-project">X Delete Project</button> 
             <div class="collapsible-content" ${project.collapsed ? 'hidden' : ''}>
                 ${renderProjectTasks(project.tasks)}
-                <button class="adder" data-action="open-task-modal">+ Add Task </button>
+                <button class="adder" data-action="open-task-modal" data-project-id="${project.id}">+ Add Task </button>
             </div>
         </div>
         </li>        

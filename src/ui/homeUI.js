@@ -24,7 +24,7 @@ export function renderHome() {
     const template = `
     <div class="content-heading">
         <h2>Home</h2>
-        <button class="adder" id="add-task-btn" data-action="open-task-modal">+ Add Task </button>
+        <button class="adder" id="add-task-btn" data-action="open-task-modal" data-is-home="true">+ Add Task </button>
     </div>
     
     <ul role="list">
