@@ -12,7 +12,7 @@ export function renderTaskCard(task) {
           Due: ${format(task.dueDate, 'MMM dd, yyyy')}
         </time>
         ${task.notes ? `<p>${task.notes}</p>` : ''}
-        <p>Priority: ${task.priority}</p>
+        <p>Priority: ${task.priority.charAt(0).toUpperCase() + task.priority.slice(1)}</p>
         <div class="task-actions">
           <button 
             class="complete-btn" 

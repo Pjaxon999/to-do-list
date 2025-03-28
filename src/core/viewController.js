@@ -52,6 +52,7 @@ function handleTaskFormSubmit(e) {
 
     // Reset and cleanup
     delete modal.dataset.editingTaskId;
+    appState.save();
     renderActiveTab();
     closeModal();
     e.target.reset();
@@ -63,6 +64,7 @@ function handleProjectFormSubmit(e) {
     const formData = new FormData(e.target);
     
     appState.addProject(formData.get('project-name'));
+    appState.save();
     renderActiveTab();
     closeModal();
     e.target.reset();
@@ -159,13 +161,17 @@ function renderActiveTab() {
 function handleCollapseToggle(projectId) {
     const project = appState.projects.find(p => p.id === projectId);
     if (project) project.collapsed = !project.collapsed;
+    appState.save();
     renderActiveTab();
 }
 
 // Delete project, then only re render if projects is the active tab
 function handleDeleteProject(projectId) {
     appState.projects = appState.projects.filter(project => project.id !== projectId);
-    if (appState.currentView === 'projects') renderActiveTab();
+    if (appState.currentView === 'projects') {
+        appState.save();
+        renderActiveTab();
+    }
 }
 
 // Toggle tasks being marked complete and completed tasks to be uncomplete, then re render 
@@ -183,7 +189,7 @@ function handleTaskComplete(taskId, projectId) {
             }
         }
     }
-    
+    appState.save();
     renderActiveTab();
 }
 
@@ -195,6 +201,7 @@ function handleDeleteTask(taskId, projectId) {
     } else {
         appState.projects.find(p => p.isHome).tasks = appState.projects.find(p => p.isHome).tasks.filter(task => task.id !== taskId);
     }
+    appState.save();
     renderActiveTab();
 }
 

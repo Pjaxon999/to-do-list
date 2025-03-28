@@ -34,7 +34,7 @@ export class Task {
     }
 
     get isOverdue() {
-        return isPast(this.dueDate);
+        return isPast(this.dueDate) && !isToday(this.dueDate);
     }
 
     get isDueToday() {
