@@ -2,7 +2,10 @@ import { format } from 'date-fns';
 
 export function renderTaskCard(task) {
   return `
-    <li class="card" data-task-id="${task.id}" data-due-date="${task.dueDate.toISOString()}" data-priority="${task.priority}">
+    <li class="card ${task.isComplete ? 'task-completed' : ''}" 
+        data-task-id="${task.id}" 
+        data-due-date="${task.dueDate.toISOString()}" 
+        data-priority="${task.priority}">
       <div class="task-content">
         <h3>${task.title}</h3>
         <time datetime="${task.dueDate.toISOString()}">

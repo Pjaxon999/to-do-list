@@ -201,8 +201,12 @@ nav {
   margin: 1rem;
 }
 
-.collapsible-content {
-  
+.task-completed {
+  text-decoration: line-through;
+  color: #888;
+  opacity: 0.6;
+  transition: all var(--transition);
+  animation: task-complete-fade var(--transition);
 }
 
 li[data-priority = "low"] {
@@ -273,6 +277,17 @@ footer {
   height: 25px;
   width: 25px;
 }
+
+/* Animation */
+@keyframes task-complete-fade {
+  from {
+      opacity: 1;
+  }
+  to {
+      opacity: 0.6;
+  }
+}
+
 
 /* Mobile Layout */
 @media (max-width: 768px) {

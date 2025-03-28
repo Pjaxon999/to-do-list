@@ -5,9 +5,12 @@ import { renderHome } from "./ui/homeUI.js";
 import { renderProjects } from "./ui/projectUI.js";
 import { renderToday } from "./ui/todayUI.js";
 import { renderOverdue } from "./ui/overdueUI.js";
+import { viewHandlers } from "./core/viewController.js";
 
 // Initialize the App state, generates "Home" project
 appState.init();
+console.log("Home Project:", appState.projects.find(project => project.isHome));
+viewHandlers();
 renderHome();
 
 // FOR TESTING, REMOVE BEFORE DEPLOYING!

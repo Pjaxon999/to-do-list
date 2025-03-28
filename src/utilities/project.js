@@ -13,11 +13,9 @@ export class Project {
         const task = new Task(
             taskData.title,
             taskData.dueDate,
-            taskData.notes,
-            taskData.priority,
+            taskData.notes || "",
+            taskData.priority || "medium",
             this.id,
-            taskData.id,
-            taskData.isComplete
         );
         this.tasks.push(task);
     }

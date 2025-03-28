@@ -15,12 +15,59 @@
 
 <div class="sidebar">
     <nav>
-    <button class="nav-button"><img src="./assets/images/home.svg">Home</button>
-    <button class="nav-button"><img src="./assets/images/inbox.svg">Projects</button>
-    <button class="nav-button"><img src="./assets/images/calendar.svg">Today</button>
-    <button class="nav-button"><img src="./assets/images/clock.svg">Overdue</button>
+    <button class="nav-button" data-view="home"><img src="./assets/images/home.svg">Home</button>
+    <button class="nav-button" data-view="projects"><img src="./assets/images/inbox.svg">Projects</button>
+    <button class="nav-button" data-view="today"><img src="./assets/images/calendar.svg">Today</button>
+    <button class="nav-button" data-view="overdue"><img src="./assets/images/clock.svg">Overdue</button>
     </nav>
 </div>
+
+<dialog id="project-modal" closed>
+    <p>Okay! Let's add a new Project!</p>
+    <form id="project-form" method="dialog">
+    <div class="form-section">
+        <label for="project">Name:</label>
+        <input type="text" name="project-name" id="name" autofocus required />
+    </div>
+    <div class="form-section">
+        <button type="button" id="cancel-btn" class="close-modal" value="cancel">X Cancel</button>
+        <button type="button" id="confirm-btn" value="default">✓ Confirm</button>
+    </div>    
+    </form>
+</dialog>
+
+<dialog id="task-modal" closed>
+    <p>Okay, let's add a new Task!</p>
+    <form id="task-form" method="dialog">
+    <input type="hidden" name="task-id" id="task-id">
+    <div class="form-section">
+        <label for="task">Title:</label>
+        <input type="text" name="title" id="title" autofocus required />
+    </div>
+    <div class="form-section">
+        <label for="date">Due Date:</label>
+        <input type="date" name ="due-date" id="date" required/>
+    </div>
+    <div class="form-section">
+        <label for="notes">Notes:</label>
+        <input type="text" name="notes" id="notes"/>
+    </div>
+    <div class="form-section">
+        <label for="priority">Priority:</label>
+        <div class="radio-section">
+            <input type="radio" id="prioritychoice1" name="priority" value="low"/>
+            <label for="prioritychoice1">Low</label>
+            <input type="radio" id="prioritychoice2" name="priority" value="medium" checked/>
+            <label for="prioritychoice2">Medium</label>
+            <input type="radio" id="prioritychoice3" name="priority" value="high"/>
+            <label for="prioritychoice3">High</label>
+        </div>
+    <div class="form-section">
+        <button type="button" id="cancel-btn" value="cancel" class="close-modal">X Cancel</button>
+        <button type="button" id="confirm-btn" value="default">✓ Confirm</button>
+    </div>
+    </form>
+</dialog>
 
 <main id="main-content">
 

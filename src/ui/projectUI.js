@@ -17,18 +17,17 @@ export function renderProjects(){
     `;
 
     // If there are no tasks in a project, return this
-    const noTaskHandler = `
+    const noTaskHandler = (projectId) => `
     <div class="card">
         <h4>No tasks to display in this project</h4>
-        <button class="adder" data-action="open-task-modal"> + Add Task </button>
     </div>
     `;
 
     // If there are tasks in the project, incorporate task cards
-    function renderProjectTasks(tasks) {
-        if (!tasks.length) return noTaskHandler;
+    function renderProjectTasks(tasks, projectId) {
+        if (!tasks.length) return noTaskHandler(projectId);
         return `
-          <ul class="project-tasks">
+          <ul role="list" class="project-tasks">
             ${tasks.map(task => renderTaskCard(task)).join('')}
           </ul>
         `;
@@ -44,7 +43,7 @@ export function renderProjects(){
             </button>
             <button class="delete-btn" data-action="delete-project">X Delete Project</button> 
             <div class="collapsible-content" ${project.collapsed ? 'hidden' : ''}>
-                ${renderProjectTasks(project.tasks)}
+                ${renderProjectTasks(project.tasks, project.id)}
                 <button class="adder" data-action="open-task-modal" data-project-id="${project.id}">+ Add Task </button>
             </div>
         </div>

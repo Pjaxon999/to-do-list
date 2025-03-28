@@ -1,9 +1,9 @@
 import { Project } from "../utilities/project";
 
 export const appState = {
-    // store projects and set the active project to home by default
+    // store projects and the current active tab
     projects: [],
-    currentProjectId: null,
+    currentView: 'home',
 
     addProject(name) {
         let projectToAdd = new Project(name);
