@@ -5,6 +5,7 @@ export function renderTaskCard(task) {
     <li class="card ${task.isComplete ? 'task-completed' : ''}" 
         data-task-id="${task.id}" 
         data-due-date="${task.dueDate.toISOString()}" 
+        data-project-id="${task.projectId || ''}"
         data-priority="${task.priority}">
       <div class="task-content">
         <h3>${task.title}</h3>

@@ -270,6 +270,11 @@ export function viewHandlers() {
         const projectId = e.target.closest('[data-project-id]')?.dataset.projectId;
         const taskId = e.target.closest('[data-task-id]')?.dataset.taskId;
 
+        // LOG FOR DEBUGGIN DELETE BEFORE PROD/PUSH
+        console.log("Action:", action);
+        console.log("Project ID:", projectId);
+        console.log("TaskID:", taskId);
+
         switch (action) {
             case 'toggle-collapse':
                 handleCollapseToggle(projectId);
